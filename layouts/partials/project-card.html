@@ -1,0 +1,26 @@
+{{ $status := .Params.status | default "planned" }}
+{{ $statusLabels := dict "active" "In Progress" "blocked" "Blocked" "planned" "Planned" "done" "Done" }}
+{{ $label := index $statusLabels $status }}
+
+{{ $progress := 0 }}
+{{ if eq $status "done" }}{{ $progress = 100 }}{{ end }}
+{{ if eq $status "active" }}{{ $progress = .Params.progress | default 40 }}{{ end }}
+{{ if eq $status "blocked" }}{{ $progress = .Params.progress | default 10 }}{{ end }}
+
+<a href="{{ .RelPermalink }}" class="entry-link">
+  <div class="entry">
+    <div class="entry-top">
+      <div class="entry-title"><span class="led {{ $status }}"></span>{{ .Title }}</div>
+      <div class="status-tag {{ $status }}">{{ $label }}</div>
+    </div>
+    <div class="meta-row">
+      <span><b>Priority</b> {{ .Params.priority | default "—" | title }}</span>
+      <span><b>Started</b> {{ if .Params.started }}{{ .Params.started }}{{ else }}—{{ end }}</span>
+      <span><b>Target</b> {{ if .Params.target }}{{ .Params.target }}{{ else }}—{{ end }}</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" style="width:{{ $progress }}%"></div></div>
+    {{ with .Params.lastLog }}
+      <div class="last-log"><span class="date">{{ .date }}</span>{{ .text }}</div>
+    {{ end }}
+  </div>
+</a>

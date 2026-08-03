@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
+<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a href="{{ "/" | relURL }}" class="eyebrow-link">
+      <div class="eyebrow">bench log &middot; live status</div>
+    </a>
+    {{ block "header" . }}{{ end }}
+  </header>
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer>
+    Generated with Hugo from <code>content/projects/*.md</code> &middot; each entry is one Markdown file with frontmatter (status, priority, dates) and a log section.
+  </footer>
+</div>
+</body>
+</html>

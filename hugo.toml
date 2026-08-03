@@ -1,0 +1,20 @@
+baseURL = "https://YOUR-GITHUB-USERNAME.github.io/bench-log/"
+languageCode = "en-us"
+title = "bench log"
+theme = ""
+canonifyURLs = true
+
+[params]
+  subtitle = "Every build, fix, and half-finished thing on the desk — status, scope, and the last thing that happened."
+
+[[params.statusOrder]]
+  key = "active"
+[[params.statusOrder]]
+  key = "blocked"
+[[params.statusOrder]]
+  key = "planned"
+[[params.statusOrder]]
+  key = "done"
+
+[markup.goldmark.renderer]
+  unsafe = true

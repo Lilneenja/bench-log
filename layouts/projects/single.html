@@ -1,0 +1,27 @@
+{{ define "header" }}
+  <a href="{{ "/" | relURL }}" class="back-link">&larr; all projects</a>
+{{ end }}
+
+{{ define "main" }}
+  {{ $status := .Params.status | default "planned" }}
+  {{ $statusLabels := dict "active" "In Progress" "blocked" "Blocked" "planned" "Planned" "done" "Done" }}
+  {{ $label := index $statusLabels $status }}
+
+  <article class="detail">
+    <div class="entry-top">
+      <div class="entry-title detail-title"><span class="led {{ $status }}"></span>{{ .Title }}</div>
+      <div class="status-tag {{ $status }}">{{ $label }}</div>
+    </div>
+
+    <div class="meta-row">
+      <span><b>Priority</b> {{ .Params.priority | default "—" | title }}</span>
+      <span><b>Started</b> {{ if .Params.started }}{{ .Params.started }}{{ else }}—{{ end }}</span>
+      <span><b>Target</b> {{ if .Params.target }}{{ .Params.target }}{{ else }}—{{ end }}</span>
+      {{ with .Params.tags }}<span><b>Tags</b> {{ delimit . ", " }}</span>{{ end }}
+    </div>
+
+    <div class="detail-body">
+      {{ .Content }}
+    </div>
+  </article>
+{{ end }}

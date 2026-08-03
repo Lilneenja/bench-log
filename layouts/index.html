@@ -1,0 +1,30 @@
+{{ define "header" }}
+  <h1>Project Index</h1>
+  <p class="sub">{{ .Site.Params.subtitle }}</p>
+
+  {{ $projects := where .Site.RegularPages "Type" "projects" }}
+  {{ $active := where $projects "Params.status" "active" }}
+  {{ $blocked := where $projects "Params.status" "blocked" }}
+  {{ $done := where $projects "Params.status" "done" }}
+
+  <div class="stat-row">
+    <div class="stat"><div class="n">{{ len $projects }}</div><div class="l">Total</div></div>
+    <div class="stat"><div class="n">{{ len $active }}</div><div class="l">Active</div></div>
+    <div class="stat"><div class="n">{{ len $blocked }}</div><div class="l">Blocked</div></div>
+    <div class="stat"><div class="n">{{ len $done }}</div><div class="l">Shipped</div></div>
+  </div>
+{{ end }}
+
+{{ define "main" }}
+  {{ $projects := where .Site.RegularPages "Type" "projects" }}
+  {{ $order := slice "active" "blocked" "planned" "done" }}
+
+  <div class="log">
+    {{ range $order }}
+      {{ $status := . }}
+      {{ range where $projects "Params.status" $status }}
+        {{ partial "project-card.html" . }}
+      {{ end }}
+    {{ end }}
+  </div>
+{{ end }}
