@@ -1,7 +1,7 @@
 ---
 title: "Arduino WiFi Connection"
 date: 2026-08-01
-status: "active"
+status: "planned"
 priority: "low"
 started:
 target:

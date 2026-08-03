@@ -1,7 +1,7 @@
 ---
 title: "Project Portfolio Website"
 date: 2026-08-02
-status: "active"
+status: "planned"
 priority: "high"
 started: 2026-08-02
 target: 2026-08-20

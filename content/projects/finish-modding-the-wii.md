@@ -1,7 +1,7 @@
 ---
 title: "Finish Modding the Wii"
 date: 2026-06-14
-status: "active"
+status: "planned"
 priority: "medium"
 started: 2026-06-14
 target:

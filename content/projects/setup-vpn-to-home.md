@@ -1,7 +1,7 @@
 ---
 title: "Setup VPN to Home"
 date: 2026-07-20
-status: "blocked"
+status: "planned"
 priority: "medium"
 started: 2026-07-20
 target:
