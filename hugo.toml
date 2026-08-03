@@ -1,7 +1,6 @@
 baseURL = "https://Lilneenja.github.io/bench-log/"
 languageCode = "en-us"
 title = "bench log"
-theme = ""
 canonifyURLs = true
 
 [params]
