@@ -40,3 +40,5 @@ lastLog:
 ## Log
 
 - Not started. ESP8266 module on order.
+
+- ESP has arrived
