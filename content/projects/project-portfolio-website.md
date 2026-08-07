@@ -1,7 +1,7 @@
 ---
 title: "Project Portfolio Website"
 date: 2026-08-02
-status: "planned"
+status: "active"
 priority: "high"
 started: 2026-08-02
 target: 2026-08-20
@@ -26,9 +26,10 @@ lastLog:
 ## Deliverables
 
 - [x] Hugo scaffold with custom theme
-- [ ] GitHub Actions deploy workflow
-- [ ] Custom domain (optional)
+- [X] GitHub Actions deploy workflow
+- [X] Custom domain (optional)
 - [ ] Migrate homework-sheet fields into frontmatter for all 7 projects
+
 
 ## Resources & dependencies
 
