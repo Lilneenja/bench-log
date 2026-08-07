@@ -1,0 +1,17 @@
+{{ define "header" }}
+  <a href="{{ "/docs/" | relURL }}" class="back-link">&larr; all docs</a>
+{{ end }}
+
+{{ define "main" }}
+  <article class="detail">
+    <div class="entry-top">
+      <div class="entry-title detail-title">{{ .Title }}</div>
+    </div>
+    {{ with .Params.updated }}
+      <div class="meta-row"><span><b>Last updated</b> {{ . }}</span></div>
+    {{ end }}
+    <div class="detail-body">
+      {{ .Content }}
+    </div>
+  </article>
+{{ end }}

@@ -12,6 +12,10 @@
     <a href="{{ "/" | relURL }}" class="eyebrow-link">
       <div class="eyebrow">bench log &middot; live status</div>
     </a>
+    <nav class="topnav">
+      <a href="{{ "/" | relURL }}" class="{{ if .IsHome }}on{{ end }}">Projects</a>
+      <a href="{{ "/docs/" | relURL }}" class="{{ if in .RelPermalink "/docs/" }}on{{ end }}">Docs</a>
+    </nav>
     {{ block "header" . }}{{ end }}
   </header>
 

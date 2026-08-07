@@ -1,0 +1,22 @@
+{{ define "header" }}
+  <h1>Docs</h1>
+  <p class="sub">Reference material, setup notes, and anything worth keeping alongside the projects.</p>
+{{ end }}
+
+{{ define "main" }}
+  <div class="log">
+    {{ range .Pages.ByTitle }}
+      <a href="{{ .RelPermalink }}" class="entry-link">
+        <div class="entry">
+          <div class="entry-top">
+            <div class="entry-title">{{ .Title }}</div>
+          </div>
+          {{ with .Params.summary }}<div class="last-log">{{ . }}</div>{{ end }}
+          {{ if not .Params.summary }}
+            <div class="last-log">{{ .Summary | plainify | truncate 140 }}</div>
+          {{ end }}
+        </div>
+      </a>
+    {{ end }}
+  </div>
+{{ end }}

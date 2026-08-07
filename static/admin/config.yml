@@ -1,0 +1,39 @@
+backend:
+  name: github
+  repo: Lilneenja/bench-log
+  branch: main
+  base_url: https://REPLACE-WITH-YOUR-OAUTH-APP.pages.dev
+  auth_endpoint: auth
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date created", name: "date", widget: "datetime" }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: ["planned", "active", "blocked", "done"]
+      - label: "Priority"
+        name: "priority"
+        widget: "select"
+        options: ["low", "medium", "high"]
+      - { label: "Started", name: "started", widget: "datetime", required: false }
+      - { label: "Target", name: "target", widget: "datetime", required: false }
+      - { label: "Progress (0-100)", name: "progress", widget: "number", required: false, min: 0, max: 100 }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - label: "Home page summary"
+        name: "lastLog"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Date shown", name: "date", widget: "string", required: false }
+          - { label: "Summary text", name: "text", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

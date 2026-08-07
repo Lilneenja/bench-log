@@ -1,6 +1,7 @@
-baseURL = "https://coilltean.net"
+baseURL = "https://YOUR-GITHUB-USERNAME.github.io/bench-log/"
 languageCode = "en-us"
 title = "bench log"
+theme = ""
 canonifyURLs = true
 
 [params]

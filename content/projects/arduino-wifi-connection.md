@@ -8,8 +8,8 @@ target:
 progress: 0
 tags: [hardware, arduino, iot]
 lastLog:
-  date: "8/2/26"
-  text: "ESP has arrived"
+  date: ""
+  text: "Not started. ESP8266 module on order."
 ---
 
 ## Scope
@@ -40,5 +40,3 @@ lastLog:
 ## Log
 
 - Not started. ESP8266 module on order.
-
-- ESP has arrived
