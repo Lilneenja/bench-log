@@ -1,11 +1,11 @@
 ---
 title: "Intialize Wesbite Task Tracking"
 date: 2026-08-02
-status: "active"
+status: "done"
 priority: "high"
 started: 2026-08-02
 target: 2026-08-10
-progress: 60
+progress: 100
 tags: [web, hugo]
 lastLog:
   date: "08/02"
