@@ -1,11 +1,11 @@
 ---
-title: "Project Portfolio Website"
+title: "Intialize Wesbite Task Tracking"
 date: 2026-08-02
 status: "active"
 priority: "high"
 started: 2026-08-02
-target: 2026-08-20
-progress: 35
+target: 2026-08-10
+progress: 60
 tags: [web, hugo]
 lastLog:
   date: "08/02"
@@ -39,6 +39,7 @@ lastLog:
 ## Definition of done
 
 - Site is live at a public URL and lists all current projects with accurate status
+- Ongoing update projects
 
 ## Log
 
